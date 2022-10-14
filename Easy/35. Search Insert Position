@@ -1,0 +1,39 @@
+# No brainer solution
+class Solution:
+    def searchInsert(self, nums: List[int], target: int) -> int:
+         for i in range(len(nums)):
+             if nums[i]==target:
+                 return i
+             else: 
+                 nums.append(target)
+                 nums.sort()
+                 return nums.index(target)
+ 
+ 
+ # wid binary search
+class Solution:
+  def searchInsert(self, nums: List[int], target: int) -> int:        
+
+      if target < nums[0]:
+          return 0
+
+      elif target > nums[len(nums)-1]:
+          return len(nums)
+
+      else:
+          low = 0
+          high = len(nums)-1
+
+          while low<=high:
+              mid = low + (high-low)//2
+              if nums[mid]==target:
+                  return mid
+
+              elif target< nums[mid]:
+                  high = mid-1
+
+              else:
+                  low = mid+1
+
+          return low
+

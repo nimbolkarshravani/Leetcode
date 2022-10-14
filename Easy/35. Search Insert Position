@@ -1,4 +1,4 @@
-# No brainer solution
+# No brainer solution TC N^2(logN)
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
          for i in range(len(nums)):
@@ -10,7 +10,7 @@ class Solution:
                  return nums.index(target)
  
  
- # wid binary search
+ # wid binary search O(log n)
 class Solution:
   def searchInsert(self, nums: List[int], target: int) -> int:        
 

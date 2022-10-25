@@ -1,4 +1,5 @@
 # 2357. Make Array Zero by Subtracting Equal Amounts
+TC = nk where k is count
 
 class Solution:
     

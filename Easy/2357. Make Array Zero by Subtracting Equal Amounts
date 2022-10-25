@@ -1,0 +1,28 @@
+# 2357. Make Array Zero by Subtracting Equal Amounts
+
+class Solution:
+    
+    
+    def minimumOperations(self, nums: List[int]) -> int:
+        count=0
+        try : 
+            nums = [i for i in nums if i != 0]
+            for i in range(len(nums)):
+                # temp=nums
+                nums = [item for item in nums if item != 0]
+                # print(temp)
+                factor = min(nums)
+                for j in range(len(nums)):
+                    if nums[j]>0:
+                        nums[j]=nums[j]-factor
+                        # print(nums)
+                count+=1
+                # print(count)
+
+        except:pass
+        
+        return count
+
+    
+                
+                

@@ -24,6 +24,15 @@ class Solution:
         
         return count
 
+# efficient solution 
+
+        nums = set(nums)
+        if 0 in nums:
+            nums.remove(0)
+        else:
+            pass
+        return len(nums)
+
     
                 
                 

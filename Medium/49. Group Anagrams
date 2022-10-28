@@ -15,7 +15,7 @@
         return list(anagram.values())
 
 
-# Now the we hashed the sorted values of each words and maintained it in the dictionay similarly we can maintain an array which has letter frequency of each word. 
+# Now the we've hashed the sorted values of each words and maintained it in the dictionay similarly we can maintain an array which has letter frequency of each word. 
 By creating a letter frequency array of each word in the string, we can compaer and see if a letter frequency array of a word matches with the letter frequcy array of 
 another word Hence the TC is NK where k is the max length of the string N is the length of the input list
 

@@ -1,0 +1,31 @@
+# 49. Group Anagrams
+
+# Nklogk approach where we use sort two words and see if they are anagram of each other, so if theyre then the sorted values of two words will b the same 
+        anagram={} #NKlogk K = max lenghth of strings among array of strings, and N is the input length 
+        for word in strs:
+            sorted_word = "".join(sorted(word)) # sorting takes logk 
+            
+            if sorted_word not in anagram:
+                anagram[sorted_word]=[]
+            
+            anagram[sorted_word].append(word)
+        
+        # print(anagram)
+        
+        return list(anagram.values())
+
+
+# Now the we hashed the sorted values of each words and maintained it in the dictionay similarly we can maintain an array which has letter frequency of each word. 
+By creating a letter frequency array of each word in the string, we can compaer and see if a letter frequency array of a word matches with the letter frequcy array of 
+another word Hence the TC is NK where k is the max length of the string N is the length of the input list
+
+        anagram=defaultdict(list)
+        for word in strs:
+            count=[0]*26 # NK
+            for letter in word:
+                count[ord(letter)-ord('a')]+=1
+            
+            anagram[tuple(count)].append(word)
+            
+        
+        return anagram.values()

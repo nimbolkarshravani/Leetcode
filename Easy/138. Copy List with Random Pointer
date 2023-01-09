@@ -1,0 +1,26 @@
+# Straightfoward approach with hash
+# Definition for a Node.
+class Node:
+    def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
+        self.val = int(x)
+        self.next = next
+        self.random = random
+
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        hashmap = {None:None}
+        cn=head
+        while cn:
+            dabba = Node(cn.val)
+            hashmap[cn] = dabba
+            cn = cn.next
+            # print(cn)
+        
+        cn=head
+        while cn:
+            dabba = hashmap[cn]
+            dabba.next = hashmap[cn.next]
+            dabba.random = hashmap[cn.random]
+            cn = cn.next
+        
+        return hashmap[head]
